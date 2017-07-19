@@ -1,0 +1,123 @@
+<html>
+<head>
+<base href="/puzzleworld/solution/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This Site Provides Interview Puzzles">
+<meta name="author" content="Satish Pahuja">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>Best Brain Teasers and Interview Puzzles</title>
+
+
+
+<!-- Bootstrap Core CSS -->
+<link href="http://localhost:8081/puzzleworld/css/bootstrap.css"
+	rel="stylesheet" type="text/css">
+<!-- Custom CSS -->
+<link href="http://localhost:8081/puzzleworld/css/puzzle.css"
+	rel="stylesheet" type="text/css">
+</head>
+
+<body ng-app="puzzleappsolution">
+
+	<div ng-include="'topnavbar.html'"></div>
+
+	<div class="container">
+
+		<div ng-controller="PuzzleSolution">
+
+			<div class="row">
+				<div class="col-md-7">
+					<h4>
+						<a href="{{puzzle.puzzleURL}}">{{puzzle.heading}}</a>
+					</h4>
+				</div>
+				<div class="col-md-5"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-7">{{puzzle.question}}</div>
+				<div class="col-md-5"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<br />
+				</div>
+				<div class="col-md-5"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-7">
+					<a ng-click="togglePuzzleAnswer()" class="btn btn-info">{{viewSolutionToggleButtonText}}</a>
+				</div>
+				<div class="col-md-5"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-7">
+					<br />
+				</div>
+				<div class="col-md-5"></div>
+			</div>
+
+			<div class="row" ng-show="viewSolutionToggle">
+				<div class="col-md-7">
+					<span ng-bind-html="puzzleSolution | html"></span>
+					<div class="col-md-5"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>Copyright &copy; Brain Tease 2017</p>
+	</div>
+
+	<script src="http://localhost:8081/puzzleworld/js/jquery.js"></script>
+
+	<script src="http://localhost:8081/puzzleworld/js/bootstrap.js"></script>
+
+	<script src="http://localhost:8081/puzzleworld/js/angular.min.js"></script>
+
+	<script src="http://localhost:8081/puzzleworld/js/angular-route.js"></script>
+
+	<script>
+
+    var app=angular.module('puzzleappsolution', ['ui.router'],function($locationProvider){
+    	 $locationProvider.html5Mode(true);
+        	});
+
+   
+    app.controller('PuzzleSolution', function($scope, $http,$location,$window) {
+    	$http.post('http://localhost:8081/foodorderingrestapp/getpuzzle/', $location.path())
+        .then(function (response) { 
+            if(response.data==""){
+                $window.location.href='http://localhost:8081/puzzleworld/';
+                }else{
+                	$scope.puzzle = response.data;
+                	$scope.puzzleSolution=response.data.solution;
+                    }
+             }).catch(function onError(response) {
+            	 $window.location.href='http://localhost:8081/puzzleworld/';
+            	  });
+
+		$scope.viewSolutionToggle=false;
+		$scope.viewSolutionToggleButtonText='Think before you click!!';
+
+		$scope.togglePuzzleAnswer = function() {
+			$scope.viewSolutionToggle=!$scope.viewSolutionToggle
+			if($scope.viewSolutionToggle){
+				$scope.viewSolutionToggleButtonText='Hide Answer';
+				}else{
+					$scope.viewSolutionToggleButtonText='Think before you click!!';
+					}
+		  }
+    });
+
+    	app.filter('html', function($sce) {
+        return function(val){
+            return $sce.trustAsHtml(val);
+        };
+    	});
+    </script>
+</body>
+</html>
