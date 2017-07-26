@@ -1,20 +1,19 @@
 <html>
+
 <head>
-<base href="/puzzleworld/solution/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This Site Provides Interview Puzzles">
-<meta name="author" content="Satish Pahuja">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>Best Brain Teasers and Interview Puzzles</title>
+	<base href="/puzzleworld/solution/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="This Site Provides Interview Puzzles">
+	<meta name="author" content="Satish Pahuja">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>Best Brain Teasers and Interview Puzzles</title>
 
 
 
-<!-- Bootstrap Core CSS -->
-<link href="http://localhost:8081/puzzleworld/css/bootstrap.css"
-	rel="stylesheet" type="text/css">
-<!-- Custom CSS -->
-<link href="http://localhost:8081/puzzleworld/css/puzzle.css"
-	rel="stylesheet" type="text/css">
+	<!-- Bootstrap Core CSS -->
+	<link href="http://localhost:8081/puzzleworld/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<!-- Custom CSS -->
+	<link href="http://localhost:8081/puzzleworld/css/puzzle.css" rel="stylesheet" type="text/css">
 </head>
 
 <body ng-app="puzzleappsolution">
@@ -81,43 +80,43 @@
 	<script src="http://localhost:8081/puzzleworld/js/angular-route.js"></script>
 
 	<script>
+		var app = angular.module('puzzleappsolution', ['ui.router'], function ($locationProvider) {
+			$locationProvider.html5Mode(true);
+		});
 
-    var app=angular.module('puzzleappsolution', ['ui.router'],function($locationProvider){
-    	 $locationProvider.html5Mode(true);
-        	});
 
-   
-    app.controller('PuzzleSolution', function($scope, $http,$location,$window) {
-    	$http.post('http://localhost:8081/foodorderingrestapp/getpuzzle/', $location.path())
-        .then(function (response) { 
-            if(response.data==""){
-                $window.location.href='http://localhost:8081/puzzleworld/';
-                }else{
-                	$scope.puzzle = response.data;
-                	$scope.puzzleSolution=response.data.solution;
-                    }
-             }).catch(function onError(response) {
-            	 $window.location.href='http://localhost:8081/puzzleworld/';
-            	  });
-
-		$scope.viewSolutionToggle=false;
-		$scope.viewSolutionToggleButtonText='Think before you click!!';
-
-		$scope.togglePuzzleAnswer = function() {
-			$scope.viewSolutionToggle=!$scope.viewSolutionToggle
-			if($scope.viewSolutionToggle){
-				$scope.viewSolutionToggleButtonText='Hide Answer';
-				}else{
-					$scope.viewSolutionToggleButtonText='Think before you click!!';
+		app.controller('PuzzleSolution', function ($scope, $http, $location, $window) {
+			$http.post('http://localhost:8081/foodorderingrestapp/getpuzzle/', $location.path())
+				.then(function (response) {
+					if (response.data == "") {
+						$window.location.href = 'http://localhost:8081/puzzleworld/';
+					} else {
+						$scope.puzzle = response.data;
+						$scope.puzzleSolution = response.data.solution;
 					}
-		  }
-    });
+				}).catch(function onError(response) {
+					$window.location.href = 'http://localhost:8081/puzzleworld/';
+				});
 
-    	app.filter('html', function($sce) {
-        return function(val){
-            return $sce.trustAsHtml(val);
-        };
-    	});
-    </script>
+			$scope.viewSolutionToggle = false;
+			$scope.viewSolutionToggleButtonText = 'Think before you click!!';
+
+			$scope.togglePuzzleAnswer = function () {
+				$scope.viewSolutionToggle = !$scope.viewSolutionToggle
+				if ($scope.viewSolutionToggle) {
+					$scope.viewSolutionToggleButtonText = 'Hide Answer';
+				} else {
+					$scope.viewSolutionToggleButtonText = 'Think before you click!!';
+				}
+			}
+		});
+
+		app.filter('html', function ($sce) {
+			return function (val) {
+				return $sce.trustAsHtml(val);
+			};
+		});
+	</script>
 </body>
+
 </html>
