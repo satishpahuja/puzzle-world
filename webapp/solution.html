@@ -113,7 +113,7 @@
 			$scope.urlPath = $location.path();
 			var parameters = JSON.stringify({ "urlPath": $scope.urlPath });
 
-			$http.post('http://localhost:8888/getsolution/', parameters, {
+			$http.post($http.get('https://localhost:'+process.env.PORT+'/getsolution/', parameters, {
 				headers: { 'Content-Type': 'application/json' }
 			}).then(function (response) {
 				if (response.data == "") {
