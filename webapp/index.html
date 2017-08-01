@@ -1,7 +1,6 @@
 <html>
 
 <head>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="This Site Provides Interview Puzzles">
 	<meta name="author" content="Satish Pahuja">
@@ -27,7 +26,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="http://localhost:8081/puzzleworld/">Brain
+				<a class="navbar-brand" ng-href="/">Brain
 					Tease</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,18 +63,6 @@
 				<div class="col-md-5"></div>
 			</div>
 		</div>
-
-
-		<!-- <div class="row text-center">
-			<div class="col-lg-7">
-				<button ng-disabled="currentPage == 1"
-					ng-click="currentPage=currentPage-1">Previous</button>
-				{{currentPage}}/{{numberOfPages()}}
-				<button ng-disabled="currentPage >= numberOfPages()"
-					ng-click="currentPage=currentPage+1">Next</button>
-			</div>
-			<div class="col-md-5"></div>
-		</div> -->
 
 		<!-- Pagination -->
 
@@ -130,7 +117,7 @@
 			$scope.pageSize = 5;
 			$scope.jsonPuzzleArray = [];
 
-			$http.get('http://localhost:8888/getPuzzleMap/').
+			$http.get('http://localhost:8888/getQuestionAnswerDataMap/').
 				then(function (response) {
 					$scope.jsonPuzzleArray = response.data;
 					$scope.updatePaginationGrid(1);

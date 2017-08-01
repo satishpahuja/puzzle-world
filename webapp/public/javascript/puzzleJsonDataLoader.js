@@ -23,10 +23,10 @@ var getFilledArrayDataMapWithGivenKey = function (key) {
 };
 
 var getFilledJsonObjWithGivenKey = function (question) {
-	for(var jsonObj in questionAnswersJsonObjDataMap){
-		if(jsonObj.has(question)){
-			return jsonObj;
-		}
+	for (var key in questionAnswersJsonObjDataMap) {
+		var jsonObj = questionAnswersJsonObjDataMap[key];
+		if (jsonObj.hasOwnProperty(question))
+			return jsonObj[question];
 	}
 };
 
@@ -112,8 +112,605 @@ function fillAndReturnInterviewPuzzles() {
 			+ "1 and 2 go across (done).<br/>",
 
 			"puzzleInsertionDate": "04.07.2017"
-		}
+		},
 
+		"rickety-bridge-problem1": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem2": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem3": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem1": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem4": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem5": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem6": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem7": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem8": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem1": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem9": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem10": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem11": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem12": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem13": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem14": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem15": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem16": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem17": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem18": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem19": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem20": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		},
+
+		"rickety-bridge-problem21": {
+
+			"puzzleHeading": "Four People on Rickety Bridge",
+
+			"puzzleQuestion": "Four people need to cross a rickety bridge at night. "
+			+ "Unfortunately, they have only one torch and the bridge is too dangerous to cross without one. "
+			+ "The bridge is only strong enough to support two people at a time. "
+			+ "Not all people take the same time to cross the bridge. "
+			+ "Times for each person:  1 min, 2 mins, 7 mins and 10 mins. "
+			+ "What is the shortest time needed for all four of them to cross the bridge?",
+
+			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
+			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
+			+ "No. That would make this question too simple even as a warm up question.<br/>"
+			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
+			+ "If they cross together, then we need one of them to come back to get the others."
+			+ "That would not be ideal. How do we get around that? "
+			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
+			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
+			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
+			+ "1 comes back <br/>"
+			+ "1 and 2 go across (done).<br/>",
+
+			"puzzleInsertionDate": "04.07.2017"
+		}
 	}
 	return jsonPuzzleObj;
 }
