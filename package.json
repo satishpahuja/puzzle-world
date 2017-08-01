@@ -1,14 +1,14 @@
 {
   "name": "puzzleworld",
   "version": "1.0.0",
-  "description": "Configure Express to serve static files",
+  "description": "This app is for puzzle problems and its solutions",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fullstacktraining/express-static-files.git"
+    "url": "https://github.com/satishpahuja/puzzle-world.git"
   },
   "keywords": [
     "node.js",
@@ -18,9 +18,9 @@
   "author": "Full Stack Training",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fullstacktraining/express-static-files/issues"
+    "url": "https://github.com/satishpahuja/puzzle-world/blob/master/issues"
   },
-  "homepage": "https://github.com/fullstacktraining/express-static-files#readme",
+  "homepage": "https://github.com/satishpahuja/puzzle-world/blob/master/README.md",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "4.13.3"
