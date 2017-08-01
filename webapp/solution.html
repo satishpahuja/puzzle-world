@@ -13,7 +13,7 @@
 	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
-<body ng-app="puzzleappsolution">
+<body ng-app="puzzleappsolution" ng-cloak>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -120,6 +120,7 @@
 					$window.location.href = 'http://localhost:8888/';
 				} else {
 					$scope.puzzle = response.data;
+					$('body').show();
 				}
 			}).catch(function onError(response) {
 				$window.location.href = 'http://localhost:8888/';

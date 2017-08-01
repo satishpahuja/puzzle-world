@@ -121,6 +121,7 @@
 				then(function (response) {
 					$scope.jsonPuzzleArray = response.data;
 					$scope.updatePaginationGrid(1);
+					$('body').show();
 				}).catch(function (error) {
 				});
 
