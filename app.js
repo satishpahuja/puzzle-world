@@ -35,7 +35,7 @@ app.get('/*', function (req, res) {
 });
 
 
-var server = app.listen(app.get('port'), function () {
+var server = app.listen(process.env.PORT || app.get('port'), function () {
   questionAnswerModule.fillQuestionAnswerDataMap();
   console.log('Magic started sucessfully');
 });
