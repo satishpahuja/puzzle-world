@@ -1,5 +1,5 @@
 {
-  "name": "express-static-files",
+  "name": "puzzleworld",
   "version": "1.0.0",
   "description": "Configure Express to serve static files",
   "main": "app.js",
@@ -24,5 +24,6 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "4.13.3"
-  }
+  },
+  "devDependencies": {}
 }
