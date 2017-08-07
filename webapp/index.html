@@ -17,57 +17,33 @@
 
 <body ng-app="puzzleappindex" ng-cloak>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" ng-href="/">Brain
-					Tease</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<div ng-include="'/html/navbar.html'"></div>
 
-	<div class="container" ng-controller="PuzzleList">
+	<div class="container" style="float:left; width:50%; margin-left: 85px" ng-controller="PuzzleList">
 
 		<div ng-repeat="puzzle in jsonPuzzleArray | startFrom : (currentPage - 1) * pageSize | limitTo : pageSize">
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-md-12">
 					<h4>
 						<a ng-href="/{{puzzle.puzzleURL}}">{{puzzle.puzzleHeading}}</a>
 					</h4>
 				</div>
-				<div class="col-md-5"></div>
 			</div>
 
-			<div class="row">
-				<div class="col-md-7">{{puzzle.puzzleQuestion | filteredQuestion}}</div>
-				<div class="col-md-5"></div>
+			<div class="row" style="text-align: justify">
+				<div class="col-md-12">{{puzzle.puzzleQuestion | filteredQuestion}}</div>
 			</div>
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-md-12">
 					<hr>
 				</div>
-				<div class="col-md-5"></div>
 			</div>
 		</div>
 
 		<!-- Pagination -->
 
 		<div class="row text-center">
-			<div class="col-lg-7">
+			<div class="col-md-12">
 				<div>Page {{currentPage}} of {{numberOfPages()}}</div>
 				<ul class="pagination">
 					<li ng-show="currentPage>1"><a ng-click="updatePaginationGrid(currentPage-1)">&laquo;</a></li>
@@ -84,19 +60,18 @@
 					<li ng-show="currentPage<numberOfPages()"><a ng-click="updatePaginationGrid(currentPage+1)">&raquo;</a></li>
 				</ul>
 			</div>
-			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-12">
 				<hr>
 			</div>
-			<div class="col-md-5"></div>
 		</div>
 	</div>
+	<div style="width:available;"></div>
 
 	<div class="footer">
-		<p>Copyright &copy; Puzzlerayse 2017</p>
+		<p>Copyright &copy; Brain Tease 2017</p>
 	</div>
 
 
@@ -114,7 +89,7 @@
 		var puzzleApp = angular.module('puzzleappindex', []);
 
 		puzzleApp.controller('PuzzleList', function ($scope, $http) {
-			$scope.pageSize = 5;
+			$scope.pageSize = 10;
 			$scope.jsonPuzzleArray = [];
 
 			$http.get('https://puzzlesworld.herokuapp.com/getQuestionAnswerDataMap').
