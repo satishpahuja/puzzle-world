@@ -101,8 +101,6 @@
 			})
 		});
 
-		//  var app = angular.module('puzzleappsolution', []);
-
 		app.controller('PuzzleSolution', function ($scope, $http, $window, $location) {
 			$scope.urlPath = $location.path();
 			var parameters = JSON.stringify({ "urlPath": $scope.urlPath });

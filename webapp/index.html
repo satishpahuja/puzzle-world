@@ -1,6 +1,7 @@
 <html>
 
 <head>
+	<base href="/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="This Site Provides Interview Puzzles">
 	<meta name="author" content="Satish Pahuja">
@@ -9,9 +10,10 @@
 
 
 
-	<!-- Bootstrap Core CSS -->
-	<link href="/css/puzzle.css" rel="stylesheet" type="text/css">
 	<!-- Custom CSS -->
+	<link href="/css/puzzle.css" rel="stylesheet" type="text/css">
+	
+	<!-- Bootstrap Core CSS -->
 	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -19,7 +21,7 @@
 
 	<div ng-include="'/html/navbar.html'"></div>
 
-	<div class="container" style="float:left; width:50%; margin-left: 85px" ng-controller="PuzzleList">
+	<div class="container" style="float:left; width:60%; margin-left: 6%" ng-controller="PuzzleList">
 
 		<div ng-repeat="puzzle in jsonPuzzleArray | startFrom : (currentPage - 1) * pageSize | limitTo : pageSize">
 			<div class="row">
@@ -86,22 +88,55 @@
 	<script src="/javascript/angular-route.js"></script>
 
 	<script>
-		var puzzleApp = angular.module('puzzleappindex', []);
+		var puzzleApp = angular.module('puzzleappindex', [], function ($locationProvider) {
+			$locationProvider.html5Mode({
+				enabled: true,
+				rewriteLinks: false
+			})
+		});
 
-		puzzleApp.controller('PuzzleList', function ($scope, $http) {
+		puzzleApp.controller('PuzzleList', function ($scope, $http, $location) {
 			$scope.pageSize = 10;
 			$scope.jsonPuzzleArray = [];
 
-			$http.get('http://localhost:8888/getQuestionAnswerDataMap').
-				then(function (response) {
-					$scope.jsonPuzzleArray = response.data;
-					$scope.updatePaginationGrid(1);
-					$('body').show();
-				}).catch(function (error) {
-				});
+			if ($location.path().indexOf("search") >= 0) {
+				$http.get('http://localhost:8888/getQuestionAnswerDataMap').
+					then(function (response) {
+						$scope.jsonPuzzleArray = response.data;
+						$scope.updatePaginationGrid(1);
+						$('body').show();
+					}).catch(function (error) {
+					});
+			} else {
+
+				$http.get('http://localhost:8888/getQuestionAnswerDataMap').
+					then(function (response) {
+						$scope.jsonPuzzleArray = response.data;
+						$scope.updatePaginationGrid(1);
+						$('body').show();
+					}).catch(function (error) {
+					});
+			}
 
 			$scope.numberOfPages = function () {
 				return Math.ceil($scope.jsonPuzzleArray.length / $scope.pageSize);
+			}
+
+			$scope.searchPuzzle = function () {
+				var searchParams = JSON.stringify(({ "searchText": $scope.searchText }))
+				$http.post('http://localhost:8888/searchPuzzle', parameters, {
+					headers: { 'Content-Type': 'application/json' }
+				}).
+					then(function (response) {
+						if (response.data == "") {
+							$window.location.href = 'http://localhost:8888/';
+						} else {
+							$scope.jsonPuzzleArray = response.data;
+							$scope.updatePaginationGrid(1);
+							$('body').show();
+						}
+					}).catch(function (error) {
+					});
 			}
 
 			$scope.updatePaginationGrid = function (passedCurrentPage) {

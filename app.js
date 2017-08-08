@@ -23,6 +23,16 @@ app.get('/getQuestionAnswerDataMap', function (req, res) {
   res.send(puzzleListMap);
 });
 
+app.get('/search', function (req, res) {
+  res.sendFile(path.join(__dirname + '/webapp/index.html'));
+});
+
+app.post('/searchPuzzle', function (req, res) {
+  var searchParam=req.body.searchParam;
+  var puzzleListMap = questionAnswerModule.getInterviewPuzzlesArrayWRTSearchKeywords(searchParam);
+   res.send(puzzleListMap);
+});
+
 app.post('/getsolution', function (req, res) {
   var urlPath=req.body.urlPath;
   var solutionObject = questionAnswerModule.getFilledJsonObjWithGivenKey(urlPath.substr(1));
