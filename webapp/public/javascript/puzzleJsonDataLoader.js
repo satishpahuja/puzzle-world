@@ -47,6 +47,25 @@ function convertAndReturnJsonObjectToArray(jsonObj) {
 	return jsonArray;
 }
 
+function getInterviewPuzzlesArrayWRTSearchKeywords(searchKeyword) {
+	var jsonArray = [];
+	var searchKeyArr = searchKeyword.split(' ');
+	var isKeywordFound = []; 
+	for (var puzzleJsonArray in questionsAnswersArrayDataMap) {
+		for (var puzzleJsonObj in puzzleJsonArray) {
+			for (var searchKey in searchKeyArr) {
+				if (puzzleJsonObj.puzzleHeading.indexOf(searchKeyword) >= 0 || puzzleJsonObj.puzzleQuestion.indexOf(searchKeyword) >= 0 || puzzleJsonObj.puzzleSolution.indexOf(searchKeyword) >= 0 ) {
+					isKeywordFound.push(true);
+				}
+			}
+			if(isKeywordFound.indexOf(false)<0){
+				jsonArray.push(puzzleJsonObj);
+			}
+		}
+	}
+	return puzzleJsonObj;
+}
+
 function fillAndReturnInterviewPuzzles() {
 
 	var jsonPuzzleObj = {
