@@ -95,45 +95,16 @@
 			$scope.pageSize = 10;
 			$scope.jsonPuzzleArray = [];
 
-			if ($location.path().indexOf("search") >= 0) {
-				$http.get('http://localhost:8888/getQuestionAnswerDataMap').
+				$http.get('https://puzzlesworld.herokuapp.com/getQuestionAnswerDataMap').
 					then(function (response) {
 						$scope.jsonPuzzleArray = response.data;
 						$scope.updatePaginationGrid(1);
 						$('body').show();
 					}).catch(function (error) {
 					});
-			} else {
-
-				$http.get('http://localhost:8888/getQuestionAnswerDataMap').
-					then(function (response) {
-						$scope.jsonPuzzleArray = response.data;
-						$scope.updatePaginationGrid(1);
-						$('body').show();
-					}).catch(function (error) {
-					});
-			}
 
 			$scope.numberOfPages = function () {
 				return Math.ceil($scope.jsonPuzzleArray.length / $scope.pageSize);
-			}
-
-			$scope.searchPuzzle = function () {
-				var searchParams = JSON.stringify(({ "searchText": $scope.searchText }))
-				$http.post('http://localhost:8888/searchPuzzle', parameters, {
-					headers: { 'Content-Type': 'application/json' }
-				}).
-					then(function (response) {
-						if (response.data == "") {
-							$window.location.href = '/';
-						} else {
-							$scope.jsonPuzzleArray = response.data;
-							$scope.updatePaginationGrid(1);
-							$('body').show();
-						}
-					}).catch(function (error) {
-						$window.location.href = '/';
-					});
 			}
 
 			$scope.updatePaginationGrid = function (passedCurrentPage) {

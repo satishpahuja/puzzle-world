@@ -39,16 +39,6 @@ app.get('/contact/', function (req, res) {
   res.sendFile(path.join(__dirname + '/webapp/contact.html'));
 });
 
-app.get('/search', function (req, res) {
-  res.sendFile(path.join(__dirname + '/webapp/index.html'));
-});
-
-app.post('/searchPuzzle', function (req, res) {
-  var searchParam=req.body.searchParam;
-  var puzzleListMap = questionAnswerModule.getInterviewPuzzlesArrayWRTSearchKeywords(searchParam);
-   res.send(puzzleListMap);
-});
-
 app.post('/getsolution', function (req, res) {
   var urlPath=req.body.urlPath;
   var trimmedURLPath=urlPath.replace(/\/$/, "")

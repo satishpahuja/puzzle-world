@@ -96,7 +96,7 @@
 			$scope.urlPath = $location.path().replace(/\/$/, "");
 			var parameters = JSON.stringify({ "urlPath": $scope.urlPath });
 
-			$http.post('http://localhost:8888/getsolution', parameters, {
+			$http.post('https://puzzlesworld.herokuapp.com/getsolution', parameters, {
 				headers: { 'Content-Type': 'application/json' }
 			}).then(function (response) {
 				if (response.data == "") {
