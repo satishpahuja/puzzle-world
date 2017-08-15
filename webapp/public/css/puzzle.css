@@ -27,6 +27,10 @@ body {
   width:60%;
 }
 
+.justifyalignment{
+text-align: justify
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }

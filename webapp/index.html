@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div class="row" style="text-align: justify">
+			<div class="row" class="justifyalignment">
 				<div class="col-md-12">{{puzzle.puzzleQuestion | filteredQuestion}}</div>
 			</div>
 			<div class="row">
@@ -125,13 +125,14 @@
 				}).
 					then(function (response) {
 						if (response.data == "") {
-							$window.location.href = 'http://localhost:8888/';
+							$window.location.href = '/';
 						} else {
 							$scope.jsonPuzzleArray = response.data;
 							$scope.updatePaginationGrid(1);
 							$('body').show();
 						}
 					}).catch(function (error) {
+						$window.location.href = '/';
 					});
 			}
 

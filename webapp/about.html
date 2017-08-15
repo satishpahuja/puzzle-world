@@ -21,10 +21,14 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				About Us
+				<h3>About Us</h3>
+			</div>
+			<div class="col-md-12">
+				<p class="justifyalignment">CrazyForPuzzle.com is for the aspirants who are looking for interview puzzles asked in various interviews. CrazyForPuzzle.com
+					is developed, maintained and founded by Satish Pahuja, a B.Tech engineer with Computer Science and Engineering background
+					and having more than 3 years of IT Experience in product development in various MNCs.</p>
 			</div>
 		</div>
-
 	</div>
 
 	<div style="width:available;"></div>
@@ -41,7 +45,6 @@
 
 
 	<script>
-
 		var puzzleApp = angular.module('puzzleappabout', [], function ($locationProvider) {
 			$locationProvider.html5Mode({
 				enabled: true,
@@ -49,6 +52,10 @@
 			})
 		});
 
+		puzzleApp.controller('PuzzleNavBar', function ($scope) {
+			var aboutEle = angular.element(document.querySelector('#about'));
+			aboutEle.addClass('active');
+		});
 		$('body').show();
 	</script>
 </body>
