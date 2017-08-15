@@ -6,7 +6,7 @@
 	<meta name="description" content="This Site Provides Interview Puzzles">
 	<meta name="author" content="Satish Pahuja">
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-	<title>Best Brain Teasers and Interview Puzzles</title>
+	<title></title>
 	<!-- Bootstrap Core CSS -->
 	<link href="/css/puzzle.css" rel="stylesheet" type="text/css">
 	<!-- Custom CSS -->
@@ -103,6 +103,7 @@
 					$window.location.href = '/';
 				} else {
 					$scope.puzzle = response.data;
+					document.title=$scope.puzzle.puzzleQuestion;
 					$('body').show();
 				}
 			}).catch(function onError(response) {
