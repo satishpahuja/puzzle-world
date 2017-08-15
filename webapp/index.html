@@ -8,8 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<title>Best Brain Teasers and Interview Puzzles</title>
 
-
-
 	<!-- Custom CSS -->
 	<link href="/css/puzzle.css" rel="stylesheet" type="text/css">
 	
@@ -21,7 +19,7 @@
 
 	<div ng-include="'/html/navbar.html'"></div>
 
-	<div class="container" style="float:left; width:60%; margin-left: 6%" ng-controller="PuzzleList">
+	<div class="container" style="float:left; width:60%" ng-controller="PuzzleList">
 
 		<div ng-repeat="puzzle in jsonPuzzleArray | startFrom : (currentPage - 1) * pageSize | limitTo : pageSize">
 			<div class="row">
@@ -72,9 +70,7 @@
 	</div>
 	<div style="width:available;"></div>
 
-	<div class="footer">
-		<p>Copyright &copy; Brain Tease 2017</p>
-	</div>
+	<div ng-include="'/html/footer.html'"></div>
 
 
 	<!-- jQuery -->

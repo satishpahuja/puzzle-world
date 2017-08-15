@@ -23,6 +23,22 @@ app.get('/getQuestionAnswerDataMap', function (req, res) {
   res.send(puzzleListMap);
 });
 
+app.get('/about', function (req, res) {
+  res.sendFile(path.join(__dirname + '/webapp/about.html'));
+});
+
+app.get('/about/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/webapp/about.html'));
+});
+
+app.get('/contact', function (req, res) {
+  res.sendFile(path.join(__dirname + '/webapp/contact.html'));
+});
+
+app.get('/contact/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/webapp/contact.html'));
+});
+
 app.get('/search', function (req, res) {
   res.sendFile(path.join(__dirname + '/webapp/index.html'));
 });
@@ -35,7 +51,8 @@ app.post('/searchPuzzle', function (req, res) {
 
 app.post('/getsolution', function (req, res) {
   var urlPath=req.body.urlPath;
-  var solutionObject = questionAnswerModule.getFilledJsonObjWithGivenKey(urlPath.substr(1));
+  var trimmedURLPath=urlPath.replace(/\/$/, "")
+  var solutionObject = questionAnswerModule.getFilledJsonObjWithGivenKey(trimmedURLPath.substr(1));
   console.log("solution",solutionObject)
   res.send(solutionObject);
 });
@@ -43,7 +60,6 @@ app.post('/getsolution', function (req, res) {
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname + '/webapp/solution.html'));
 });
-
 
 var server = app.listen(process.env.PORT || app.get('port'), function () {
   questionAnswerModule.fillQuestionAnswerDataMap();

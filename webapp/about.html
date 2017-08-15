@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="This Site Provides Interview Puzzles">
+	<meta name="author" content="Satish Pahuja">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>Best Brain Teasers and Interview Puzzles</title>
+	<!-- Bootstrap Core CSS -->
+	<link href="/css/puzzle.css" rel="stylesheet" type="text/css">
+	<!-- Custom CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-app="puzzleappabout" ng-cloak>
+
+	<div ng-include="'/html/navbar.html'"></div>
+
+	<div class="container" style="float:left; width:60%">
+
+		<div class="row">
+			<div class="col-md-12">
+				About Us
+			</div>
+		</div>
+
+	</div>
+
+	<div style="width:available;"></div>
+
+	<div ng-include="'/html/footer.html'"></div>
+
+	<!-- jQuery -->
+	<script src="/javascript/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/javascript/bootstrap.js"></script>
+
+	<script src="/javascript/angular.min.js"></script>
+
+
+	<script>
+
+		var puzzleApp = angular.module('puzzleappabout', [], function ($locationProvider) {
+			$locationProvider.html5Mode({
+				enabled: true,
+				rewriteLinks: false
+			})
+		});
+
+		$('body').show();
+	</script>
+</body>
+
+</html>

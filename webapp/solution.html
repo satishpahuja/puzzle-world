@@ -31,57 +31,50 @@
 
 	</div>
 
-	<div class="container" ng-controller="PuzzleSolution">
+	<div class="container" style="float:left; width:60%" ng-controller="PuzzleSolution">
 
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-12">
 				<h4>
 					<a href="{{urlPath}}">{{puzzle.puzzleHeading}}</a>
 				</h4>
 			</div>
-			<div class="col-md-5"></div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-7" style="text-align: justify">{{puzzle.puzzleQuestion}}</div>
-			<div class="col-md-5"></div>
+			<div class="col-md-12" style="text-align: justify">{{puzzle.puzzleQuestion}}</div>
 		</div>
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-12">
 				<br />
 			</div>
-			<div class="col-md-5"></div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-12">
 				<a ng-click="togglePuzzleAnswer()" class="btn btn-info">{{viewSolutionToggleButtonText}}</a>
 			</div>
-			<div class="col-md-5"></div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-12">
 				<br />
 			</div>
-			<div class="col-md-5"></div>
 		</div>
 
 		<div class="row" ng-show="viewSolutionToggle">
-			<div class="col-md-7" style="text-align: justify">
+			<div class="col-md-12" style="text-align: justify">
 				<span ng-bind-html="puzzle.puzzleSolution | html"></span>
-				<div class="col-md-5"></div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-7 fb-comments" data-href="https://puzzlesworld.herokuapp.com{{urlPath}}" data-width="880" data-numposts="100"></div>
+			<div class="col-md-12 fb-comments" data-href="https://puzzlesworld.herokuapp.com{{urlPath}}" data-width="700" data-numposts="50"></div>
 		</div>
-		<div class="col-md-5"></div>
 	</div>
 
-	<div class="footer">
-		<p>Copyright &copy; Brain Tease 2017</p>
-	</div>
+	<div style="width:available;"></div>
+
+	<div ng-include="'/html/footer.html'"></div>
 
 	<!-- jQuery -->
 	<script src="/javascript/jquery.js"></script>
@@ -102,7 +95,7 @@
 		});
 
 		app.controller('PuzzleSolution', function ($scope, $http, $window, $location) {
-			$scope.urlPath = $location.path();
+			$scope.urlPath = $location.path().replace(/\/$/, "");
 			var parameters = JSON.stringify({ "urlPath": $scope.urlPath });
 
 			$http.post('http://localhost:8888/getsolution', parameters, {
