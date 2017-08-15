@@ -103,7 +103,7 @@
 					$window.location.href = '/';
 				} else {
 					$scope.puzzle = response.data;
-					document.title=$scope.puzzle.puzzleQuestion;
+					document.title=$scope.puzzle.puzzleHeading;
 					$('body').show();
 				}
 			}).catch(function onError(response) {
