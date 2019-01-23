@@ -133,7 +133,7 @@ function fillAndReturnInterviewPuzzles() {
 			"puzzleInsertionDate": "04.07.2017"
 		},
 
-		"three-Priests-and-three-devils-problem ": {
+		"three-priests-and-three-devils-problem": {
 
 			"puzzleHeading": "Three Priests and Three Devils",
 
