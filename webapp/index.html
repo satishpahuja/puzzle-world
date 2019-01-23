@@ -147,7 +147,7 @@
 			}
 		})
 
-		app.filter('html', function ($sce) {
+		puzzleApp.filter('html', function ($sce) {
 			return function (val) {
 				return $sce.trustAsHtml(val);
 			};
