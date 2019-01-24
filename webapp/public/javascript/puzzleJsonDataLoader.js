@@ -251,6 +251,58 @@ function fillAndReturnInterviewPuzzles() {
 			 	 "By offering a gold coin to Colin (who would otherwise get nothing) he is assured of a deal.",
 
 			"puzzleInsertionDate": "04.07.2017"
+		},
+		"deadly-choice-puzzle": {
+
+			"puzzleHeading": "Deadly Choice Puzzle",
+
+			"puzzleQuestion": "A man is caught on the King's property."+
+			"He is brought before the King to be punished."+ 
+			"The King says, \"You must give me a statement\""+
+			"If it is true, you will killed by lions."+
+			"If it is false, you will be killed by trampling of wild buffalo."+
+			
+			"But in the end, the King has to let the man go."+
+			
+			"What was the man's statement?",
+
+			"puzzleSolution": "\"I will be killed by trampling of wild buffalo.\""+
+
+			"If you think about it carefully: the King can't say it is true,"+
+			"because if so the man should be killed by the lions."+
+			"But if he is killed by the lions, then his statement would be false,"+
+			"and so should have been trampled by buffalo."+
+			
+			"So the King can't tell if it is a lie or truth, so decides to just let him go.<br/>",
+
+			"puzzleInsertionDate": "24.01.2019"
+		},
+		"eight-marbles-weighing-puzzle": {
+
+			"puzzleHeading": "Eight Marbles Weighing Puzzle",
+
+			"puzzleQuestion": "Suppose you have 8 marbles and a two-pan balance used to compare the weight of 2 things."+
+			"All of the marbles weigh the same except for one,"+
+			"which is heavier than all of the others."+
+			"How would you find the heaviest marble if you are only allowed to weigh the marbles 2 times?",
+
+			"puzzleSolution": "So, let’s do this:"+ 
+				"we put 3 marbles on each pan – for a total of 6 marbles on the pan,"+
+				"and we leave 2 marbles off the pan.<br/>"+
+				"Then, we compare the 6 marbles on the pan – if one side is heavier than the other then we only have 3 marbles left."+
+				"We can compare 2 of those 3 marbles to each other,"+
+				"and if they are the same weight then the 3rd is the heaviest,"+
+				"and if one is heavier than the other then we have the heaviest in just 2 weighings.<br/>"+
+				"If, when comparing the 6 marbles we find that both sides are equal,"+
+				"then we know that the heaviest marble has to be in the 2 marbles that are not on the pan.<br/>"+
+				"This then means that we only have to compare those 2 remaining marbles and we have the heaviest marble.<br/>"+
+				"So, we have found our answer!<br/>",
+
+			"puzzleInsertionDate": "24.01.2019"
+
+
+
+
 		}
 	}
 	return jsonPuzzleObj;
