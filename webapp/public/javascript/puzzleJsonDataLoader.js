@@ -207,29 +207,48 @@ function fillAndReturnInterviewPuzzles() {
 			"puzzleInsertionDate": "23.01.2019"
 		},
 
-		"Camel-and-Banana-Puzzle": {
+		"five-pirates-problem": {
 
-			"puzzleHeading": "Camel and Banana Puzzle",
+			"puzzleHeading": "Five Pirates Problem.",
 
-			"puzzleQuestion": "A person has 3000 bananas and a camel."+
-			"The person wants to transport maximum number of bananas to a destination"+
-			"which is 1000 KMs away, the camel as a mode of transportation."+
-			"The camel cannot carry more than 1000 bananas at a time"+
-			"and eats a banana every km it travels."+
-			"What is the maximum number of bananas that can be transferred to the destination using only camel"+
-			"(no other mode of transportation is allowed).",
+			"puzzleQuestion": "5 pirates of different ages have a treasure of 100 gold coins."+ 
 
-			"puzzleSolution": "The initial solution most people will think of is to use the fastest person as an usher to guide everyone across. "
-			+ "How long would that take ? 10 + 1 + 7 + 1 + 2 = 21 mins. Is that it? "
-			+ "No. That would make this question too simple even as a warm up question.<br/>"
-			+ "Let's brainstorm a little further. To reduce the amount of time, we should find a way for 10 and 7 to go together."
-			+ "If they cross together, then we need one of them to come back to get the others."
-			+ "That would not be ideal. How do we get around that? "
-			+ "Maybe we can have 1 waiting on the other side to bring the torch back. Ahaa, we are getting closer."
-			+ "The fastest way to get 1 across and be back is to use 2 to usher 1 across. "
-			+ "So let's put all this together.<br/>" + "1 and 2 go cross <br/> " + "2 comes back <br/> " + "7 and 10 go across<br/> "
-			+ "1 comes back <br/>"
-			+ "1 and 2 go across (done).<br/>",
+			"On their ship, they decide to split the coins using this scheme:"+ 
+			
+			"The oldest pirate proposes how to share the coins,"+
+			  "and ALL pirates (including the oldest) vote for or against it."+ 
+			
+			"If 50% or more of the pirates vote for it,"+
+			  "then the coins will be shared that way."+
+			  "Otherwise, the pirate proposing the scheme will be thrown overboard,"+
+			  "and the process is repeated with the pirates that remain."+
+			
+			"As pirates tend to be a bloodthirsty bunch,"+
+			 "if a pirate would get the same number of coins if he voted for or against a proposal,"+
+			 "he will vote against so that the pirate who proposed the plan will be thrown overboard."+
+			
+			"Assuming that all 5 pirates are intelligent, rational, greedy, and do not wish to die,"+ 
+			"(and are rather good at math for pirates) what will happen?",
+
+			"puzzleSolution": "The oldest pirate will propose a 98 : 0 : 1 : 0 : 1 split, in other words the oldest pirate gets 98 coins,"+ 
+				"the middle pirate gets 1 coin and the youngest gets 1 coin.<br/>"+
+			"Let us name the pirates (from oldest to youngest): Alex, Billy, Colin, Duncan and Eddie.<br/>"+
+			"Working backwards:<br/>"+
+			"2 Pirates: Duncan splits the coins 100 : 0 (giving himself all the gold)."+
+				"His vote (50%) is enough to ensure the deal.<br/>"+
+			"3 Pirates: Colin splits the coins 99 : 0 : 1."+
+				"Eddie will accept this deal (getting just 1 coin),"+ 
+				"because he knows that if he rejects the deal there will be only two pirates left,"+
+				"and he gets nothing.<br/>"+
+			"4 Pirates: Billy splits the coins 99 : 0 : 1 : 0."+
+				 "By the same reasoning as before, Duncan will support this deal."+
+				 "Billy would not waste a spare coin on Colin, because Colin knows that if he rejects the proposal,"+
+				 "he will pocket 99 coins once Billy is thrown overboard."+ 
+				 "Billy would also not give a coin to Eddie,"+
+				 "because Eddie knows that if he rejects the proposal,"+
+				 "he will receive a coin from Colin in the next round anyway.<br/>"+
+			"5 Pirates: Alex splits the coins 98 : 0 : 1 : 0 : 1."+
+			 	 "By offering a gold coin to Colin (who would otherwise get nothing) he is assured of a deal.",
 
 			"puzzleInsertionDate": "04.07.2017"
 		},
