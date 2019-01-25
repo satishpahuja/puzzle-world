@@ -258,7 +258,7 @@ function fillAndReturnInterviewPuzzles() {
 
 			"puzzleQuestion": "A man is caught on the King's property."+
 			"He is brought before the King to be punished."+ 
-			"The King says, \"You must give me a statement\""+
+			"The King says, You must give me a statement"+
 			"If it is true, you will killed by lions."+
 			"If it is false, you will be killed by trampling of wild buffalo."+
 			
@@ -266,7 +266,7 @@ function fillAndReturnInterviewPuzzles() {
 			
 			"What was the man's statement?",
 
-			"puzzleSolution": "\"I will be killed by trampling of wild buffalo.\""+
+			"puzzleSolution": "I will be killed by trampling of wild buffalo."+
 
 			"If you think about it carefully: the King can't say it is true,"+
 			"because if so the man should be killed by the lions."+
@@ -303,7 +303,133 @@ function fillAndReturnInterviewPuzzles() {
 
 
 
+		},
+		"who-will-shout-first": {
+
+			"puzzleHeading": "Who Will Shout First Puzzle",
+
+			"puzzleQuestion": "4 criminals are caught and are to be punished."+
+			 "The Judge allows them to be freed if they can solve a puzzle."+
+			 "If they do not, they will be hung. They agreed.<br/>"+
+			 "The 4 criminals are lined up on some steps (shown in picture)."+
+			 "They are all facing in the same direction."+
+			 "A wall seperates the fourth man from the other three.<br/>"+
+			 "So to summarise :-"+
+			 "Man 1 can see men 2 and 3.<br/>"+
+			 "Man 2 can see man 3.<br/>"+
+			 "Man 3 can see none of the others.<br/>"+
+			 "Man 4 can see none of the others.<br/>"+
+			
+			"The criminals are wearing hats."+
+			"They are told that there are two white hats and two black hats."+
+			"The men initially don't know what colour hat they are wearing."+
+			"They are told to shout out the colour of the hat that they are wearing as soon as they know for certain what colour it is."+
+
+			"They are not allowed to turn round or move.<br/>"+
+			"They are not allowed to talk to each other.<br/>"+
+			"They are not allowed to take their hats off.<br/>"+
+			
+			"Who is the first person to shout out and why?<br/>",
+			
+
+			"puzzleSolution": "Man 1 will shout first."+
+			"Suppose if Man1 will not shout then Man 2 surely shout.<br/>"+
+			"Reason:<br/>"+
+			
+			"Man1 can see the other two criminals hats."+
+			"If the hats are same color then he told his hat is opposite color of remaining two hats."+
+			"So he shout first.<br/>"+
+			
+			"If Man1 not shout means that the color of hats (Man2,Man3) is different."+
+			"So Man2 see the color of Man3 hat and he told the opposite color of Man3 hat is his hat.<br/>",
+
+			"puzzleInsertionDate": "25.01.2019"
+		},
+		"break-the-gold-bar": {
+
+			"puzzleHeading": "Break The Gold Bar Puzzle",
+
+			"puzzleQuestion": "You’ve got someone working for you for seven days and a gold bar to pay them."+
+				"You must pay the worker for their work at the end of every day."+
+				"If you are only allowed to make two breaks in the gold bar,"+
+				"how do you pay your worker?"+
+				"(Assuming equal amount of work is done during each day thus requiring equal amount of pay for each day)",
+
+				"puzzleSolution": "The trick is not to try and how to cut in such a way to make 7 equal pieces"+
+				 "but rather to make transactions with the worker."+
+				"Make two cuts on the gold bar such that you have the following sizes of bars.<br/>"+
+
+				"1/7, 2/7 and 4/7."+
+				"For convenience sake, I would just refer to the bars as 1, 2 and 4.<br/>"+
+				
+				"At the end of Day 1: Give Bar 1 (You- 2 and 4, Worker- 1)<br/>"+
+				
+				"At the end of Day 2: Give Bar 2, Take back Bar 1 (You- 1 and 4, Worker- 2)<br/>"+
+
+				"At the end of Day 3: Give Bar 1 (You- 4, Worker- 1 and 2)<br/>"+
+
+				"At the end of Day 4: Give Bar 4, Take back Bar 1 and Bar 2 (You- 1 and 2, Worker- 4)<br/>"+
+
+				"At the end of Day 5: Give Bar 1 (You- 2, Worker- 1 and 4)<br/>"+
+
+				"At the end of Day 6: Give Bar 2, Take back Bar 1 (You- 1, Worker- 2 and 4)<br/>"+
+
+				"At the end of Day 7: Give Bar 1 (You- Empty, Worker- 1, 2 and 4)<br/>"+
+
+				"That should take care of everything.<br/>",
+
+			"puzzleInsertionDate": "25.01.2019"
+		},
+			"the-pot-of-beans": {
+
+			"puzzleHeading": "The Pot of Beans Puzzle",
+
+			"puzzleQuestion": "A pot contains 75 white beans and 150 black ones."+
+			 "Next to the pot is a large pile of black beans."+
+			 "A somewhat demented cook removes the beans from the pot, one at a time, according to the following strange rule:"+
+			 "He removes two beans from the pot at random."+
+			 "If atleast one of the beans is black, he places it on the bean pile and drops the other bean,"+
+			 "no matter what color, back in the pot."+
+			 "If both beans are white, on the other hand, he discards both of them"+
+			 "and removes one black bean from the pile and drops it in the pot."+
+			 "At each turn of this procedure, the pot has one less bean in it."+
+			 "Eventually, just one bean is left in the pot. What color is it?",
+
+			"puzzleSolution": "The answer is White."+
+				"The cook removes the white beans two at a time,"+
+				"and there is an odd number of them<br/>."+
+				"When the cook gets to the last white bean and picks it up along with a black bean,"+
+				"the white one always goes back into the pot.",
+
+			"puzzleInsertionDate": "25.01.2019"
+			},
+		"old-man-and-three-sons": {
+
+			"puzzleHeading": "Old Man and Three Sons",
+	
+			"puzzleQuestion": "An old man had three sons"+
+				"He was on his death bed and wanted to leave all his property with his wisest son.<br/>"+
+
+				"So he called all three of his sons and gave them equal amount of money.<br/>"+
+				
+				"He told them to buy something from that money that can fill their living room entirely.<br/>"+
+				
+				"The first son bought straw but due to shortage of money, he was not able to fill the entire room.<br/>"+
+				
+				"The second son bought sticks, but again they were not enough to fill the room.<br/>"+
+				
+				"But the third son bought two things that filled the room completely.<br/>"+
+				
+				"Can you find out what did he buy?<br/>",
+	
+			"puzzleSolution": "The third son bought a candle and a matchbox from the money.<br/>"+
+
+			"He lit the candle and the room was filled with light.<br/>",
+	
+			"puzzleInsertionDate": "25.01.2019"		
+	
+		},
+	
 		}
-	}
 	return jsonPuzzleObj;
 }
