@@ -405,13 +405,13 @@ function fillAndReturnInterviewPuzzles() {
 
 			"puzzleHeading": "Deadly Choice Puzzle",
 
-			"puzzleQuestion": "A man is caught on the Kings property."+
-			"He is brought before the King to be punished."+ 
-			"The King says, You must give me a statement"+
-			"If it is true, you will killed by lions."+
-			"If it is false, you will be killed by trampling of wild buffalo."+
-			"But in the end, the King has to let the man go."+
-			"What was the man's statement gfgfggsfgsfdgdfgfdgetretertwragfsgdfgdfgdfgdfgsdfgsdfgsgsdfgdfgsdfgdfsgsdfgdfggdgggfdjkaflgjlgfjdlkgfsdjksgfdjklfdgjklsgfdjklgsfdjkljdgfskfdjkgdfsjksgdfjksgfdkjfgdkjfgdkjgdfsjkgfsdjklsgfdjklsgfdjklsgfdjklsgfjdkdfgjkfgjdklgfdkjlsgfjksgfdjksfgjklsfgjklsfkdjglsdfgksdfgklsgksdfgklsfgklgkfjjkfgls?",
+			"puzzleQuestion": "A man is caught on the Kings property. "+
+			"He is brought before the King to be punished. "+ 
+			"The King says, You must give me a statement "+
+			"If it is true, you will killed by lions. "+
+			"If it is false, you will be killed by trampling of wild buffalo. "+
+			"But in the end, the King has to let the man go. "+
+			"What was the man's statement?",
 
 			"puzzleSolution": "I will be killed by trampling of wild buffalo."+
 
