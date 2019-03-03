@@ -97,7 +97,7 @@
 			$scope.pageSize = 10;
 			$scope.jsonPuzzleArray = [];
 
-				$http.get('https://puzzlesworld.herokuapp.com/getQuestionAnswerDataMap').
+				$http.get('http://localhost:8888/getQuestionAnswerDataMap').
 					then(function (response) {
 						$scope.jsonPuzzleArray = response.data;
 						$scope.updatePaginationGrid(1);
