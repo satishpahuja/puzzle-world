@@ -411,7 +411,7 @@ function fillAndReturnInterviewPuzzles() {
 			"If it is true, you will killed by lions."+
 			"If it is false, you will be killed by trampling of wild buffalo."+
 			"But in the end, the King has to let the man go."+
-			"What was the man's statement?",
+			"What was the man's statement gfgfggsfgsfdgdfgfdgetretertwragfsgdfgdfgdfgdfgsdfgsdfgsgsdfgdfgsdfgdfsgsdfgdfggdgggfdjkaflgjlgfjdlkgfsdjksgfdjklfdgjklsgfdjklgsfdjkljdgfskfdjkgdfsjksgdfjksgfdkjfgdkjfgdkjgdfsjkgfsdjklsgfdjklsgfdjklsgfdjklsgfjdkdfgjkfgjdklgfdkjlsgfjksgfdjksfgjklsfgjklsfkdjglsdfgksdfgklsgksdfgklsfgklgkfjjkfgls?",
 
 			"puzzleSolution": "I will be killed by trampling of wild buffalo."+
 
